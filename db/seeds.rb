@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Dish.destroy_all
+Country.destroy_all
+
+(1..3).each do |n|
+  country = Country.create(category: "Country ##{n}")
+  (1..5).each do |t|
+    item = Dish.create(title: "Dish no. #{t}", recipe: "A delicious recipe", country: country)
+  end
+end
