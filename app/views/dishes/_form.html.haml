@@ -1,0 +1,17 @@
+= form_for(dish) do |f|
+  - if dish.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(dish.errors.count, "error")
+        prohibited this dish from being saved:
+      %ul
+        - dish.errors.full_messages.each do |message|
+          %li= message
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :recipe
+    = f.text_area :recipe
+  .actions
+    = f.submit
