@@ -11,8 +11,8 @@ Dish.destroy_all
 Country.destroy_all
 
 (1..3).each do |n|
-  name = Country.create(name: "Country ##{n}")
+  country = Country.create(name: "Country ##{n}")
   (1..5).each do |t|
-    dish = Dish.create(title: "Dish no. #{t}", recipe: "A delicious recipe")
+    dish = Dish.create(title: "Dish no. #{t}", recipe: "A delicious recipe", country: country)
   end
 end
