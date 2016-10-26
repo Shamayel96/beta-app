@@ -56,7 +56,7 @@ class CountriesController < ApplicationController
   def destroy
     @country.destroy
     respond_to do |format|
-      format.html { redirect_to countries_url, notice: 'Country was successfully destroyed.' }
+      format.html { redirect_to countries_path, notice: 'Country was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
