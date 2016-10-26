@@ -1,7 +1,17 @@
 %p#notice= notice
-%p
-  %strong Name:
+
+%h1
   = @country.name
-= link_to 'Edit', edit_country_path(@country)
-|
-= link_to 'Back', countries_path
+  
+%ul
+  - @country.dishes.each do |dish|
+    %li
+      = dish.title 
+      = link_to 'Show', dish
+      = link_to 'Edit', edit_dish_path(dish)
+      = link_to 'Destroy', dish, :method => :delete, :data => { :confirm => 'Are you sure?' }
+%br/
+%p 
+  = link_to 'New Dish', new_country_dish_path(:country_id)
+  |
+  = link_to 'Back', countries_path
