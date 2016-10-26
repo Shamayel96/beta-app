@@ -13,7 +13,7 @@ class DishesController < ApplicationController
   def show
   end
 
-  # GET countries/:id/dishes/new
+  # GET countries/:country_id/dishes/new
   def new
     @dish = Dish.new
   end
@@ -23,11 +23,11 @@ class DishesController < ApplicationController
     @country = Dish.find(params[:id]).country_id
   end
 
-  # POST countries/:id/dishes
-  # POST countries/:id/dishes.json
+  # POST countries/:country_id/dishes
+  # POST countries/:country_id/dishes.json
   def create
     @dish = Dish.new(dish_params)
-    @dish.country_id = @country.id
+    @dish.country.id = @country.id
 
     respond_to do |format|
       if @dish.save
@@ -57,10 +57,10 @@ class DishesController < ApplicationController
   # DELETE /dishes/1
   # DELETE /dishes/1.json
   def destroy
-    @country = @dish.country.id
+    @country = @dish.country_id
     @dish.destroy
     respond_to do |format|
-      format.html { redirect_to dishes_url, notice: 'Dish was successfully destroyed.' }
+      format.html { redirect_to country_path(@dish.country), notice: 'Dish was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
