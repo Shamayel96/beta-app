@@ -1,5 +1,5 @@
-= form_for(dish) do |f|
-  - if dish.errors.any?
+= form_for @dish ,{url: url} do |f|
+  - if @dish.errors.any?
     #error_explanation
       %h2
         = pluralize(dish.errors.count, "error")
@@ -12,6 +12,6 @@
     = f.text_field :title
   .field
     = f.label :recipe
-    = f.text_area :recipe
+    = f.text_area :recipe, rows: 10, cols: 60 
   .actions
-    = f.submit
+    = f.submit  'Save'
