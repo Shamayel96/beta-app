@@ -1,16 +1,21 @@
-%p#notice= notice
-%h1 Countries
+%h1 Arabic Countries
+
 %table
   %thead
     %tr
-      %th Name
-      %th{:colspan => "3"}
+      %th Country
+      %th
+      %th
+      %th
+
   %tbody
     - @countries.each do |country|
       %tr
         %td= country.name
         %td= link_to 'Show', country
         %td= link_to 'Edit', edit_country_path(country)
-        %td= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' }
-%br/
+        %td= link_to 'Destroy', country, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
 = link_to 'New Country', new_country_path
