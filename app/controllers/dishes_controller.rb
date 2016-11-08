@@ -15,7 +15,8 @@ class DishesController < ApplicationController
 
   # GET countries/:country_id/dishes/new
   def new
-    @dish = Dish.new
+    @dish = Dish.new  
+    @dish.country_id = @country.id
   end
 
   # GET /dishes/1/edit
@@ -27,7 +28,7 @@ class DishesController < ApplicationController
   # POST countries/:country_id/dishes.json
   def create
     @dish = Dish.new(dish_params)
-    @dish.country.id = @country.id
+    @dish.country_id = @country.id
 
     respond_to do |format|
       if @dish.save
