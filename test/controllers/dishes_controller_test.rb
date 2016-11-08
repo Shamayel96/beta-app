@@ -2,11 +2,11 @@ require 'test_helper'
 
 class DishesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @dish = dishes(:one)
+    @dish = dishes(:dish_one)
   end
 
   test "should get index" do
-    get dishes_url
+    get country_dishes_url
     assert_response :success
   end
 
