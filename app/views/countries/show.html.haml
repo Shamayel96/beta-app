@@ -12,6 +12,6 @@
       = link_to 'Destroy', dish, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %br/
 %p 
-  = link_to 'New Dish', new_country_dish_path(:country_id)
+  = link_to 'New Dish', new_country_dish_path(@country)
   |
   = link_to 'Back', countries_path

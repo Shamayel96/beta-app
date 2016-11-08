@@ -2,22 +2,23 @@ require 'test_helper'
 
 class DishesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @dish = dishes(:one)
+    @dish = dishes(:dish_one)
+    @country = countries(:country_one)
   end
 
   test "should get index" do
-    get dishes_url
+    get country_dishes_url(@country)
     assert_response :success
   end
 
   test "should get new" do
-    get new_dish_url
+    get new_country_dish_url(@country)
     assert_response :success
   end
 
   test "should create dish" do
     assert_difference('Dish.count') do
-      post dishes_url, params: { dish: { recipe: @dish.recipe, title: @dish.title } }
+      post country_dishes_url(@country), params: { dish: { recipe: @dish.recipe, title: @dish.title } }
     end
 
     assert_redirected_to dish_url(Dish.last)
@@ -43,6 +44,6 @@ class DishesControllerTest < ActionDispatch::IntegrationTest
       delete dish_url(@dish)
     end
 
-    assert_redirected_to dishes_url
+    assert_redirected_to country_dishes_url
   end
 end
