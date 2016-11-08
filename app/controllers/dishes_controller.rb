@@ -15,8 +15,7 @@ class DishesController < ApplicationController
 
   # GET countries/:country_id/dishes/new
   def new
-    @dish = Dish.new  
-    @dish.country_id = @country.id
+    @dish = Dish.new
   end
 
   # GET /dishes/1/edit
@@ -61,7 +60,7 @@ class DishesController < ApplicationController
     @country = @dish.country_id
     @dish.destroy
     respond_to do |format|
-      format.html { redirect_to country_path(@dish.country), notice: 'Dish was successfully destroyed.' }
+      format.html { redirect_to country_dishes_url(@country), notice: 'Dish was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -77,6 +76,6 @@ class DishesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dish_params
-      params.require(:dish).permit(:title, :recipe, :country_id)
+      params.require(:dish).permit(:title, :recipe)
     end
 end
