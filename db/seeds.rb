@@ -13,6 +13,6 @@ Country.destroy_all
 (1..3).each do |n|
   country = Country.create(name: "Country ##{n}")
   (1..5).each do |t|
-    dish = Dish.create(title: "Dish no. #{t}", recipe: "A delicious recipe", image: "/images/:style/missing.png", country: country)
+    dish = Dish.create(title: "Dish no. #{t}", recipe: "A delicious recipe", country: country, image: File.open(File.join(Rails.root, '/public/images/foodimage.jpg')))
   end
 end
