@@ -2,6 +2,9 @@
 %p
   %strong Title:
   = @dish.title
+ - if @note.image.file?
+  .image
+    = image_tag @note.image.url(:medium)
 %p
   %strong Recipe:
   = @dish.recipe
