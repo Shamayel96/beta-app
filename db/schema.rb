@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109191924) do
+ActiveRecord::Schema.define(version: 20161114204002) do
 
   create_table "countries", force: :cascade do |t|
     t.string   "name"
@@ -29,6 +29,17 @@ ActiveRecord::Schema.define(version: 20161109191924) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.index ["country_id"], name: "index_dishes_on_country_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "uid"
+    t.string   "provider"
+    t.string   "nickname"
+    t.string   "name"
+    t.string   "location"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
