@@ -52,3 +52,6 @@ gem "haml-rails", "~> 0.9"
 
 #uses paperclip for uploaded images
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+
+# Use OmniAuth and the Twitter OAuth Strategy
+gem 'omniauth-twitter'
