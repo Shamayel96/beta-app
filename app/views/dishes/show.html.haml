@@ -2,9 +2,13 @@
 %p
   %strong Title:
   = @dish.title
+  - if @note.image.file?
+  .image
+    = image_tag @note.image.url(:medium)
 %p
   %strong Recipe:
   = @dish.recipe
 = link_to 'Edit', edit_dish_path(@dish)
 |
 = link_to 'Back', country_path(@dish.country)
+  end

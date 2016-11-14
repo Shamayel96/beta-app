@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+<<<<<<< HEAD
 
   def self.from_omniauth(hash)
     user = User.find_or_create_by(uid: hash['uid'], provider: hash['provider'])
@@ -10,4 +11,6 @@ class User < ApplicationRecord
     user
   end
 
+=======
+>>>>>>> master
 end

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
@@ -14,3 +15,22 @@ two:
   location: MyString
   uid: MyString
   provider: MyString
+=======
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: MyString
+  provider: MyString
+  nickname: MyString
+  name: MyString
+  location: MyString
+  image: MyString
+
+two:
+  uid: MyString
+  provider: MyString
+  nickname: MyString
+  name: MyString
+  location: MyString
+  image: MyString
+>>>>>>> master

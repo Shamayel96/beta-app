@@ -5,4 +5,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
 end
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
