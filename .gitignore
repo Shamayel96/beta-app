@@ -22,3 +22,9 @@
 
 # Ignore environment variables 
 /config/local_env.yml
+
+# Ignore temporary files
+*~
+
+# Ignore file uploads
+public/system/dishes/
