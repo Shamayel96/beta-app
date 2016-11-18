@@ -3,13 +3,23 @@
 %h1
   = @country.name
   
-%ul
-  - @country.dishes.each do |dish|
-    %li
-      = dish.title 
-      = link_to 'Show', dish
-      = link_to 'Edit', edit_dish_path(dish)
-      = link_to 'Destroy', dish, :method => :delete, :data => { :confirm => 'Are you sure?' }
+%table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+      %th
+      %th
+      
+  %tbody    
+    - @country.dishes.each do |dish|
+      %tr
+      %td= image_tag(dish.image.url(:thumb))
+      %td= dish.title 
+      %td= link_to 'Show', dish
+      %td= link_to 'Edit', edit_dish_path(dish)
+      %td= link_to 'Destroy', dish, :method => :delete, :data => { :confirm => 'Are you sure?' }
 %br/
 %p 
   = link_to 'New Dish', new_country_dish_path(@country)
