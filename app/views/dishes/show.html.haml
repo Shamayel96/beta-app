@@ -1,15 +1,21 @@
 %p#notice= notice
 %p
-  %strong Title:
   = @dish.title
+
+-# THE NEXT FEW LINES CAN BE ADDED AT A LATER TIME  
+-#%p
+  -#submitted by:
+  -#= @user.nickname
+  -#under
+  -#= @dish.country.name
+  
 %p
   - if @dish.image.file?
     .image
     = image_tag @dish.image.url(:medium)
 %p
-  %strong Recipe:
   = @dish.recipe
 %p 
-  = link_to 'Edit', edit_dish_path(@dish) 
+  = link_to 'Edit this Dish', edit_dish_path(@dish) 
   |
-  = link_to 'Back', country_path(@dish.country)
+  = link_to 'Back to Dishes', country_path(@dish.country)
