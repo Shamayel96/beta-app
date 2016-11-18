@@ -66,7 +66,7 @@ table {
 
 
 body {
-	background-color: #91728f;
+	background-color: #AEB05D;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	list-style-type: none;
 	display: inline-block;
@@ -78,7 +78,8 @@ body {
   padding-bottom: 1.25em; /* 22.5px / 18px */
   padding-left: 1.125em; /* 4:5 ratio on baseline */
   padding-right: 1.125em; /* 4:5 ratio on baseline */
-  text-size-adjust: 100%;
+  /*text-size-adjust: 100%;*/
+	text-align: center;
 }
 
 h1 {
@@ -97,13 +98,14 @@ p {
 	line-height: 1.25em; /* 22.5px / 18px */
 	padding-bottom: 1.25em; /* 22.5px / 18px */
 	margin: 0em;
+	
 }
 
 header {
-	background: #91728f;
+	background: #AEB05D;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	border-bottom-width: 5px;
-	border-bottom-color: #91728f;
+	border-bottom-color: #AEB05D;
 	border-bottom-style: solid;
 	position:block;
 	top: 0px;
