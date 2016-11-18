@@ -55,4 +55,5 @@ gem "haml-rails", "~> 0.9"
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 
 # Use OmniAuth and the Twitter OAuth Strategy
+gem 'omniauth'
 gem 'omniauth-twitter'
