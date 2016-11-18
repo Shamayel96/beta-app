@@ -1,5 +1,5 @@
 %h1 Editing Dish
 = render 'form', url: dish_path
-= link_to 'Show', @dish
+= link_to 'View Current Dish', @dish
 |
-= link_to 'Back', country_path(@dish.country)
+= link_to 'Back to All Dishes', country_path(@dish.country)
