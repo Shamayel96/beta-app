@@ -5,6 +5,10 @@ class SessionsController < ApplicationController
     session[:id] = @user.id
     redirect_to countries_path
   end
+  
+  def auth_hash
+    request.env['omniauth.auth']
+  end
 
   def destroy
     reset_session
