@@ -41,6 +41,9 @@ group :production do
   gem 'pg'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0.0.beta'
+end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -62,6 +65,7 @@ gem "haml-rails", "~> 0.9"
 gem "paperclip", git: "https://github.com/thoughtbot/paperclip.git"
 
 # Use OmniAuth and the Twitter OAuth Strategy
-gem 'omniauth'
-gem 'omniauth-twitter'
+group :development, :production, :test do
+  gem 'omniauth'
+  gem 'omniauth-twitter'
 end
