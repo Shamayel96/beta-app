@@ -33,8 +33,14 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   # Use sqlite3 as the database for Active Record
+group :development, :test do
   gem 'sqlite3'
 end
+
+group :production do
+  gem 'pg'
+end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -53,8 +59,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "haml-rails", "~> 0.9"
 
 #uses paperclip for uploaded images
-gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem "paperclip", git: "https://github.com/thoughtbot/paperclip.git"
 
 # Use OmniAuth and the Twitter OAuth Strategy
 gem 'omniauth'
 gem 'omniauth-twitter'
+end
